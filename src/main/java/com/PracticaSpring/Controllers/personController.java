@@ -27,6 +27,11 @@ public class personController {
     @Autowired
     PersonService personService;
 
+    @GetMapping
+    public String welcome() {
+        return "Hola mundo";
+    }
+
     @PostMapping("/create") // dicta el metodo http post, lo que esta entre parentecis es la ruta extra ej:
                             // http://localhost:8080/person/create
     public void createdPerson(@RequestBody /* esto aclara que los datos vienen por el Body */ Person person) {
