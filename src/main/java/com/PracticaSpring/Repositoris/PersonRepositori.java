@@ -10,9 +10,9 @@ import com.PracticaSpring.Models.Person.Person;
 @Repository
 public interface PersonRepositori extends JpaRepository<Person, Integer> {
 
-    public Person findByUserAndPass(String user, String pass);
+    public Person findByUsernameAndPassword(String username, String password);
 
     Optional<Person> findByEmail(String email);
 
-    Optional<Person> findByUserName(String userName);
+    Optional<Person> findByUsername(String userName);
 }

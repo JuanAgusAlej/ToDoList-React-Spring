@@ -21,11 +21,11 @@ public class AuthService {
 
     public AuthResponse createdPerson(RegisterRequest request) {
         Person person = Person.builder()
-                .userName(request.getUserName())
+                .username(request.getUsername())
                 .email(request.getEmail())
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
-                .pass(request.getPass())
+                .password(request.getPassword())
                 .role(Role.USER)
                 .build();
 

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.PracticaSpring.Auth.AuthResponse;
 import com.PracticaSpring.Models.Person.Person;
 import com.PracticaSpring.Models.Person.PersonDTO;
 import com.PracticaSpring.Repositoris.PersonRepositori;
@@ -39,7 +38,7 @@ public class PersonService {
 
     public PersonDTO loadin(String user, String pass) {
 
-        Person person = personRepo.findByUserAndPass(user, pass);
+        Person person = personRepo.findByUsernameAndPassword(user, pass);
         return new PersonDTO(person.getId(), person.getFirstName(), person.getLastName(), person.getEmail());
 
     }

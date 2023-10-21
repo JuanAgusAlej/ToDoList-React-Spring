@@ -66,7 +66,7 @@ public class personController {
     @PostMapping("/login")
     public PersonDTO loginPerson(@RequestBody Person person) {
 
-        return personService.loadin(person.getUsername(), person.getPass());
+        return personService.loadin(person.getUsername(), person.getPassword());
     }
 
 }

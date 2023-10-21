@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -44,8 +43,8 @@ public class Person implements UserDetails {
     private String firstName;
     private String lastName;
     @Column(nullable = false) // no permite agregar datos si el user vine nulo
-    private String userName;
-    private String pass;
+    private String username;
+    private String password;
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -77,18 +76,6 @@ public class Person implements UserDetails {
     public boolean isEnabled() {
 
         return true;
-    }
-
-    @Override
-    public String getPassword() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPassword'");
-    }
-
-    @Override
-    public String getUsername() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUsername'");
     }
 
 }

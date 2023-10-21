@@ -18,7 +18,6 @@ public class JwtAutenticadFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-        // TODO Auto-generated method stub
         final String token = getTokenFromRequest(request);
         if (token == null) {
             filterChain.doFilter(request, response);
