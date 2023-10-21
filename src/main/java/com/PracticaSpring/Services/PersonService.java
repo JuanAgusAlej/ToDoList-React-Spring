@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.PracticaSpring.Auth.AuthResponse;
 import com.PracticaSpring.Models.Person.Person;
 import com.PracticaSpring.Models.Person.PersonDTO;
 import com.PracticaSpring.Repositoris.PersonRepositori;
@@ -17,10 +18,6 @@ public class PersonService {
 
     @Autowired
     PersonRepositori personRepo;
-
-    public void createdPerson(Person person) {
-        personRepo.save(person);
-    }
 
     public List<Person> getAllPerson() {
 
