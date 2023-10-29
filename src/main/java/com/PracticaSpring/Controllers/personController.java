@@ -27,11 +27,18 @@ public class personController {
     @Autowired
     PersonService personService;
 
-    @PostMapping("/create") // dicta el metodo http post, lo que esta entre parentecis es la ruta extra ej:
-                            // http://localhost:8080/person/create
-    public void createdPerson(@RequestBody /* esto aclara que los datos vienen por el Body */ Person person) {
-        personService.createdPerson(person);
+    @GetMapping
+    public String welcome() {
+        return "Hola mundo";
     }
+
+    // @PostMapping("/create") // dicta el metodo http post, lo que esta entre
+    // parentecis es la ruta extra ej:
+    // // http://localhost:8080/person/create
+    // public void createdPerson(@RequestBody /* esto aclara que los datos vienen
+    // por el Body */ Person person) {
+    // personService.createdPerson(person);
+    // }
 
     @GetMapping("/Get")
     @ResponseBody
@@ -59,7 +66,7 @@ public class personController {
     @PostMapping("/login")
     public PersonDTO loginPerson(@RequestBody Person person) {
 
-        return personService.loadin(person.getUser(), person.getPass());
+        return personService.loadin(person.getUsername(), person.getPassword());
     }
 
 }

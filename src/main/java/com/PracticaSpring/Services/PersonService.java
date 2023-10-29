@@ -18,10 +18,6 @@ public class PersonService {
     @Autowired
     PersonRepositori personRepo;
 
-    public void createdPerson(Person person) {
-        personRepo.save(person);
-    }
-
     public List<Person> getAllPerson() {
 
         return personRepo.findAll();
@@ -42,7 +38,7 @@ public class PersonService {
 
     public PersonDTO loadin(String user, String pass) {
 
-        Person person = personRepo.findByUserAndPass(user, pass);
+        Person person = personRepo.findByUsernameAndPassword(user, pass);
         return new PersonDTO(person.getId(), person.getFirstName(), person.getLastName(), person.getEmail());
 
     }
